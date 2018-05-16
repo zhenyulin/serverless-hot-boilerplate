@@ -1,0 +1,20 @@
+# deps
+node_modules/
+bower_components/
+
+# build cache
+/public*
+build/
+demos/local/
+.sass-cache/
+.serverless
+tmp
+
+# dotfile
+*.env*
+.DS_Store
+package-lock.json
+yarn.lock
+
+# log
+*.log
