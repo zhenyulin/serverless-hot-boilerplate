@@ -2,5 +2,8 @@
   "dependencies": {
     "aws-sdk": "^2.240.1",
     "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "lambda-tester": "^3.4.1"
   }
 }

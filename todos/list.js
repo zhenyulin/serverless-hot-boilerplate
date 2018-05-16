@@ -7,7 +7,7 @@ const params = {
 	TableName: process.env.TODOS_TABLE_NAME
 };
 
-module.exports.list = async (event, context, callback) => {
+module.exports.handler = async (event, context, callback) => {
 	try {
 		const result = await dynamoDb.scan(params).promise();
 		const response = {
