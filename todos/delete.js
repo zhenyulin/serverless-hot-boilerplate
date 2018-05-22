@@ -1,19 +1,12 @@
 'use strict';
 
-const AWS = require('aws-sdk');
-
-const dynamoDb = new AWS.DynamoDb.DocumentClient();
+const Todo = require('./model');
 
 module.exports.handler = async (event, context, callback) => {
 	try {
-		const params = {
-			TableName: process.env.TODOS_TABLE_NAME,
-			Key: {
-				id: event.pathParameters.id,
-			},
-		};
-
-		const result = await dynamoDb.delete(params);
+		await Todo.delete({
+			id: event.pathParameters.id
+		});
 
 		const response = {
 			statusCode: 200,

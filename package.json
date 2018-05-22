@@ -1,9 +1,11 @@
 {
   "dependencies": {
     "aws-sdk": "^2.240.1",
+    "dynamoose": "^0.8.7",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
-    "lambda-tester": "^3.4.1"
+    "dotenv": "^5.0.1",
+    "jest": "^22.4.3"
   }
 }

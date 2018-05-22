@@ -1,23 +1,17 @@
 'use strict';
 
-const AWS = require('aws-sdk');
-
-const dynamoDb = new AWS.DynamoDb.DocumentClient();
+const Todo = require('./model');
 
 module.exports.handler = async (event, context, callback) => {
 	try {
-		const params = {
-			TableName: process.env.TODOS_TABLE_NAME,
-			Key: {
-				id: event.pathParameters.id,
-			},
-		};
 
-		const result = await dynamoDb.get(params);
+		const result = await Todo.get({
+			id: event.pathParameters.id
+		});
 
 		const response = {
 			statusCode: 200,
-			body: JSON.stringify(result.Item),
+			body: JSON.stringify(result),
 		};
 		callback(null, response);
 	} catch(e) {

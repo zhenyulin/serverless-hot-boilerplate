@@ -1,8 +1,6 @@
 'use strict';
 
-const AWS = require('aws-sdk');
-
-const dynamoDb = new AWS.DynamoDb.DocumentClient();
+const Todo = require('./model');
 
 module.exports.handler = async (event, context, callback) => {
 	const timestamp = new Date().getTime();
@@ -14,30 +12,16 @@ module.exports.handler = async (event, context, callback) => {
     	return;
 	}
 
-	const params = {
-		TableName: process.env.TODOS_TABLE_NAME,
-		Key: {
-			id: event.pathParameters.id,
-		},
-		ExpressionAttributeNames: {
-			'#todo_text': 'text',
-		},
-		ExpressionAttributeValues: {
-			':text': data.text,
-			':checked': data.checked,
-			':updatedAt': timestamp,
-		},
-		UpdateExpression: 'SET #todo_text = :text, checked = :checked, updatedAt = :updatedAt',
-		ReturnValues: 'ALL_NEW',
-	};
-
 	try {
-
-		const result = await dynamoDb.update(params);
+		const result = await Todo.update({ id: event.pathParameters.id }, {
+			text: data.text,
+			checked: data.checked,
+			updatedAt: timestamp
+		});
 
 		const response = {
 			statusCode: 200,
-			body: JSON.stringify(result.Attributes),
+			body: JSON.stringify(result),
 		};
 		callback(null, response);
 	} catch(e) {
