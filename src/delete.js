@@ -1,11 +1,9 @@
-'use strict';
-
 const Todo = require('./model');
 
 module.exports.handler = async (event, context, callback) => {
 	try {
 		await Todo.delete({
-			id: event.pathParameters.id
+			id: event.pathParameters.id,
 		});
 
 		const response = {
@@ -13,7 +11,7 @@ module.exports.handler = async (event, context, callback) => {
 			body: JSON.stringify({}),
 		};
 		callback(null, response);
-	} catch(e) {
+	} catch (e) {
 		console.log(e);
 		callback(e);
 	}

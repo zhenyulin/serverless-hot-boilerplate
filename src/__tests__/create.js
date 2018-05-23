@@ -1,14 +1,14 @@
-const Todo = require('../model');
-const { handler } = require('../create');
+import Todo from '../model';
+import { handler } from '../create';
 
 jest.mock('../model');
 
-describe('create.handler', function () {
+describe('create.handler', () => {
 	beforeEach(() => {
-	  Todo.mockClear();
+		Todo.mockClear();
 	});
 
-	test('create an item in Dynamo', async function () {
+	test('create an item in Dynamo', async () => {
 		const event = {
 			body: JSON.stringify({
 				text: 'add one item',

@@ -35,16 +35,15 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
+        - dynamodb:DescribeTable
       Resource:
         Fn::GetAtt:
           - TodosDynamoDbTable
           - Arn
-  environment:
-    TODOS_TABLE_NAME: serverless-example-todos
 
 functions:
   create:
-    handler: todos/create.handler
+    handler: dist/create.default
     events:
       - http:
           path: todos
@@ -52,7 +51,7 @@ functions:
           cors: true
 
   list:
-    handler: todos/list.handler
+    handler: dist/list.default
     events:
       - http:
           path: todos
@@ -60,7 +59,7 @@ functions:
           cors: true
 
   get:
-    handler: todos/get.handler
+    handler: dist/get.default
     events:
       - http:
           path: todos/{id}
@@ -68,7 +67,7 @@ functions:
           cors: true
 
   update:
-    handler: todos/update.handler
+    handler: dist/update.default
     events:
       - http:
           path: todos/{id}
@@ -76,7 +75,7 @@ functions:
           cors: true
 
   delete:
-    handler: todos/delete.handler
+    handler: dist/delete.default
     events:
       - http:
           path: todos/{id}
