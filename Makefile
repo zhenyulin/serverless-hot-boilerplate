@@ -1,7 +1,6 @@
-build: $(shell find src -type f)
-	@echo 'Building…'
-	@rm -rf dist
-	@npx babel src -d dist --ignore '**/__tests__/*.js'
+run:
+	@export NODE_ENV=development
+	@sls offline start
 
 lint:
 	@echo 'linting…'
@@ -20,7 +19,10 @@ test-watch:
 	@npx jest --watch --config test-setup.js
 
 coverage:
-	@npx jest --coverage
+	@npx jest --coverage --config test-setup.js
 
 deploy:
 	@sls deploy -v
+
+destroy:
+	@sls remove

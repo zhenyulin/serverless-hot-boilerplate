@@ -1,20 +1,18 @@
 ---
-service: todo-example
+service: serverless-example-todos
 
 frameworkVersion: ">=1.1.0 <2.0.0"
 
 resources:
   Resources:
-    TodosDynamoDbTable:
+    todoExampleTable:
       Type: 'AWS::DynamoDB::Table'
       Properties:
         AttributeDefinitions:
-          -
-            AttributeName: id
+          - AttributeName: id
             AttributeType: S
         KeySchema:
-          -
-            AttributeName: id
+          - AttributeName: id
             KeyType: HASH
         ProvisionedThroughput:
           ReadCapacityUnits: 1
@@ -29,17 +27,19 @@ provider:
   iamRoleStatements:
     - Effect: "Allow"
       Action:
-        - dynamodb:Query
-        - dynamodb:Scan
-        - dynamodb:GetItem
-        - dynamodb:PutItem
-        - dynamodb:UpdateItem
         - dynamodb:DeleteItem
         - dynamodb:DescribeTable
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:UpdateItem
       Resource:
         Fn::GetAtt:
-          - TodosDynamoDbTable
+          - todoExampleTable
           - Arn
+  environment:
+    AWS_REGION: ${file(./serverless.env.yml):dev.AWS_REGION}
 
 functions:
   create:
@@ -81,3 +81,8 @@ functions:
           path: todos/{id}
           method: delete
           cors: true
+
+plugins:
+  - serverless-webpack
+  - serverless-dynamodb-local
+  - serverless-offline
