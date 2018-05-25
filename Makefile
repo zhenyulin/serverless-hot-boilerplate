@@ -1,5 +1,4 @@
 run:
-	@export NODE_ENV=development
 	@sls offline start
 
 lint:
