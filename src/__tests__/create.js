@@ -9,14 +9,15 @@ describe('create.handler', () => {
 	});
 
 	test('create an item in Dynamo', async () => {
-		const event = {
+		const req = {
 			body: JSON.stringify({
 				text: 'add one item',
 			}),
 		};
-		const context = {};
-		const callback = () => {};
-		await handler(event, context, callback);
+		const res = {
+			json: jest.fn(),
+		};
+		await handler(req, res);
 		expect(Todo.create.mock.calls).toHaveLength(1);
 	});
 });
