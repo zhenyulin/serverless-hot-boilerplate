@@ -22,6 +22,6 @@ export const handler = async (req, res) => {
 };
 
 app.use(bodyParser.json());
-app.use(handler);
+app.use('/todos/:id', handler);
 
 export default serverless(app);

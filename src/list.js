@@ -7,7 +7,7 @@ const app = express();
 
 export const handler = async (req, res) => {
 	try {
-		const result = await Todo.scan();
+		const result = await Todo.scan().exec();
 		res.json(result);
 	} catch (e) {
 		res.json(e);

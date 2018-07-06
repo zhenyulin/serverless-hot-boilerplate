@@ -13,6 +13,7 @@ dist/
 .DS_Store
 .cache
 .serverless
+.webpack
 *.env*
 package-lock.json
 

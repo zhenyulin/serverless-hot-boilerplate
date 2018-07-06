@@ -43,7 +43,7 @@ provider:
 
 functions:
   create:
-    handler: dist/create.default
+    handler: src/create.default
     events:
       - http:
           path: todos
@@ -51,7 +51,7 @@ functions:
           cors: true
 
   list:
-    handler: dist/list.default
+    handler: src/list.default
     events:
       - http:
           path: todos
@@ -59,7 +59,7 @@ functions:
           cors: true
 
   get:
-    handler: dist/get.default
+    handler: src/get.default
     events:
       - http:
           path: todos/{id}
@@ -67,7 +67,7 @@ functions:
           cors: true
 
   update:
-    handler: dist/update.default
+    handler: src/update.default
     events:
       - http:
           path: todos/{id}
@@ -75,7 +75,7 @@ functions:
           cors: true
 
   delete:
-    handler: dist/delete.default
+    handler: src/delete.default
     events:
       - http:
           path: todos/{id}

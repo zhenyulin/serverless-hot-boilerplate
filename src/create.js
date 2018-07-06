@@ -9,9 +9,10 @@ const app = express();
 
 export const handler = async (req, res) => {
 	try {
+		const { text } = req.body;
 		const result = await Todo.create({
 			id: uuid.v1(),
-			text: req.body.text,
+			text,
 			checked: false,
 		});
 		res.json(result);

@@ -1,18 +1,22 @@
-const Todo = require('./model');
+import serverless from 'serverless-http';
+import express from 'express';
 
-module.exports.handler = async (event, context, callback) => {
+import Todo from './model';
+
+const app = express();
+
+export const handler = async (req, res) => {
 	try {
 		await Todo.delete({
-			id: event.pathParameters.id,
+			id: req.params.id,
 		});
-
-		const response = {
-			statusCode: 200,
-			body: JSON.stringify({}),
-		};
-		callback(null, response);
+		res.status(204).end();
 	} catch (e) {
-		console.log(e);
-		callback(e);
+		res.json(e);
+		throw e;
 	}
 };
+
+app.use('/todos/:id', handler);
+
+export default serverless(app);
