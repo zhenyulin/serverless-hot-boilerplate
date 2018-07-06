@@ -17,7 +17,7 @@ describe('delete.handler', () => {
 		};
 		const res = {
 			json: jest.fn(),
-			status: jest.fn(),
+			status: jest.fn(() => res),
 			end: jest.fn(),
 		};
 		await handler(req, res);

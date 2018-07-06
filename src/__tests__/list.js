@@ -1,11 +1,13 @@
 import Todo from '../model';
 import { handler } from '../list';
 
-jest.mock('../model');
+Todo.scan = jest.fn(() => ({
+	exec: jest.fn(),
+}));
 
 describe('list.handler', () => {
 	beforeEach(() => {
-		Todo.mockClear();
+		Todo.scan.mockClear();
 	});
 
 	test('list all todo items', async () => {
