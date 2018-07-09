@@ -1,4 +1,4 @@
-import Todo from '../model';
+import Todo from '../../models/todo';
 import { handler } from '../list';
 
 Todo.scan = jest.fn(() => ({

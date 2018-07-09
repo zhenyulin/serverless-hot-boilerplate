@@ -1,27 +1,22 @@
 import serverless from 'serverless-http';
 import express from 'express';
-import bodyParser from 'body-parser';
 
-import Todo from './model';
+import Todo from '../models/todo';
 
 const app = express();
 
 export const handler = async (req, res) => {
 	try {
-		const result = await Todo.update(
-			{
-				id: req.params.id,
-			},
-			req.body,
-		);
-		res.json(result);
+		await Todo.delete({
+			id: req.params.id,
+		});
+		res.status(204).end();
 	} catch (e) {
 		res.json(e);
 		throw e;
 	}
 };
 
-app.use(bodyParser.json());
 app.use('/todos/:id', handler);
 
 export default serverless(app);

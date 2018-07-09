@@ -3,7 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import uuid from 'uuid';
 
-import Todo from './model';
+import Todo from '../models/todo';
 
 const app = express();
 
