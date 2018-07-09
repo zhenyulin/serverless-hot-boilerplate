@@ -3,8 +3,6 @@ import express from 'express';
 
 import Todo from 'models/todo';
 
-const app = express();
-
 export const handler = async (req, res) => {
 	try {
 		await Todo.delete({
@@ -17,6 +15,6 @@ export const handler = async (req, res) => {
 	}
 };
 
-app.use('/todos/:id', handler);
+export const app = express().use('/todos/:id', handler);
 
 export default serverless(app);

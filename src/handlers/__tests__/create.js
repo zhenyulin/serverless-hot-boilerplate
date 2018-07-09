@@ -1,23 +1,23 @@
+import request from 'supertest';
+
 import Todo from 'models/todo';
-import { handler } from 'handlers/create';
+import { app } from 'handlers/create';
 
 jest.mock('models/todo');
+jest.mock('uuid', () => ({
+	v1: jest.fn(() => 'mock-id'),
+}));
 
-describe('create.handler', () => {
+describe('create.app', () => {
 	beforeEach(() => {
-		Todo.mockClear();
+		jest.clearAllMocks();
 	});
 
 	test('create an item in Dynamo', async () => {
-		const req = {
-			body: JSON.stringify({
-				text: 'add one item',
-			}),
-		};
-		const res = {
-			json: jest.fn(),
-		};
-		await handler(req, res);
-		expect(Todo.create.mock.calls).toHaveLength(1);
+		const response = await request(app)
+			.post('/')
+			.send({ text: 'add one item' });
+		expect(response.status).toBe(200);
+		expect(Todo.create.mock.calls).toMatchSnapshot();
 	});
 });

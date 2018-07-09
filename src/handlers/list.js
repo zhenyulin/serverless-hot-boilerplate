@@ -3,8 +3,6 @@ import express from 'express';
 
 import Todo from 'models/todo';
 
-const app = express();
-
 export const handler = async (req, res) => {
 	try {
 		const result = await Todo.scan().exec();
@@ -15,6 +13,6 @@ export const handler = async (req, res) => {
 	}
 };
 
-app.use(handler);
+export const app = express().use(handler);
 
 export default serverless(app);

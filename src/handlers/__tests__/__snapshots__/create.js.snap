@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`create.app create an item in Dynamo 1`] = `
+Array [
+  Array [
+    Object {
+      "checked": false,
+      "id": "mock-id",
+      "text": "add one item",
+    },
+  ],
+]
+`;

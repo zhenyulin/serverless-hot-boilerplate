@@ -5,9 +5,7 @@ import uuid from 'uuid';
 
 import Todo from 'models/todo';
 
-const app = express();
-
-export const handler = async (req, res) => {
+const handler = async (req, res) => {
 	try {
 		const { text } = req.body;
 		const result = await Todo.create({
@@ -22,7 +20,6 @@ export const handler = async (req, res) => {
 	}
 };
 
-app.use(bodyParser.json());
-app.use(handler);
+export const app = express().use([bodyParser.json(), handler]);
 
 export default serverless(app);

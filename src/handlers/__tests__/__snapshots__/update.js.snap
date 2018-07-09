@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`update.app update an todo item by id 1`] = `
+Array [
+  Array [
+    Object {
+      "id": "xxxx-xxxx",
+    },
+    Object {
+      "text": "update one item",
+    },
+  ],
+]
+`;

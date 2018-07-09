@@ -13,15 +13,18 @@ lint:
 	@npx eslint src
 
 lint-fix:
+	@echo 'lint-fixing…'
 	@npx eslint src --fix
 
 lint-watch:
+	@set +e
 	@npx nodemon --watch src -q --exec 'make lint-fix'
 
 test:
 	@npx jest --config jest.config.js
 
 test-watch:
+	@set +e
 	@npx jest --watch --config jest.config.js
 
 test-coverage:

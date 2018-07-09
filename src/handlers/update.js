@@ -4,8 +4,6 @@ import bodyParser from 'body-parser';
 
 import Todo from 'models/todo';
 
-const app = express();
-
 export const handler = async (req, res) => {
 	try {
 		const result = await Todo.update(
@@ -21,7 +19,6 @@ export const handler = async (req, res) => {
 	}
 };
 
-app.use(bodyParser.json());
-app.use('/todos/:id', handler);
+export const app = express().use('/todos/:id', [bodyParser.json(), handler]);
 
 export default serverless(app);
