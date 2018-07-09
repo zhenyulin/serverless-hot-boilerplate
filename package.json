@@ -1,5 +1,6 @@
 {
   "name": "serverless-example",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",
     "dynamoose": "^0.8.7",
