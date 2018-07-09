@@ -1,19 +1,19 @@
 # serverless-example
 
-Basic Restful API of a Todo app based on serverless, dynamoDB(Dynamoose)
+ultimate-hot-boilerplate for serverless, build, test and deploy globally scalable APIs cheaper and faster
 
-## About
-* Local Preview (serverless-offline)
+## Development Experience
+* Local Offline (serverless-offline, serverless-local-dynamodb)
 * Hot Module Reload (serverless-webpack)
-* Development DB (serverless-local-dynamodb)
-* auto fix and format code (eslint, prettier and webpack)
+* auto fix and code format (eslint, prettier and webpack)
 * ..less path resolve (webpack, eslint, jest)
+* packages with friendly apis (express, dynamoose)
 
 ## Development
 
 ```shell
-yarn # install deps
-sls dynamodb install # install the dynamodb-local
+make install # install deps
+make setup # install the dynamodb-local
 make run # start serverless-offline
 ```
 
