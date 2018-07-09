@@ -1,4 +1,4 @@
-# serverless-example
+# serverless-hot-boilerplate
 
 ultimate-hot-boilerplate for serverless, build, test and deploy globally scalable APIs cheaper and faster
 

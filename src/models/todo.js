@@ -11,4 +11,4 @@ const TodoSchema = new dynamoose.Schema(
 	},
 );
 
-export default dynamoose.model('serverless-example-todos', TodoSchema);
+export default dynamoose.model('serverless-hot-boilerplate', TodoSchema);

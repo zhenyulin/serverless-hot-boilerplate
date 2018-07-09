@@ -1,5 +1,5 @@
 {
-  "name": "serverless-example",
+  "name": "serverless-hot-boilerplate",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",
