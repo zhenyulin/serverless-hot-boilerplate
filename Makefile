@@ -1,3 +1,10 @@
+install:
+	@yarn
+
+setup:
+	@sls dyanmodb remove \
+	@sls dynamodb install
+
 run:
 	@sls offline start
 
