@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = {
 	entry: slsw.lib.entries,
-	mode: 'development',
+	mode: slsw.lib.webpack.isLocal ? 'development' : 'production',
 	target: 'node',
 	externals: [nodeExternals()],
 	resolve: {
