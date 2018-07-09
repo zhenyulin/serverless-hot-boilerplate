@@ -17,7 +17,7 @@ test:
 test-watch:
 	@npx jest --watch --config jest.config.js
 
-coverage:
+test-coverage:
 	@npx jest --coverage --config jest.config.js
 
 deploy:
