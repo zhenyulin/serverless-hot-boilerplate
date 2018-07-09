@@ -1,7 +1,7 @@
-import Todo from '../../models/todo';
-import { handler } from '../create';
+import Todo from 'models/todo';
+import { handler } from 'handlers/create';
 
-jest.mock('../../models/todo');
+jest.mock('models/todo');
 
 describe('create.handler', () => {
 	beforeEach(() => {

@@ -1,7 +1,7 @@
 import serverless from 'serverless-http';
 import express from 'express';
 
-import Todo from '../models/todo';
+import Todo from 'models/todo';
 
 const app = express();
 
