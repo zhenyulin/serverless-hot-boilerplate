@@ -19,6 +19,8 @@ make run # start serverless-offline
 
 ## Todos
 * integration test with a test dynamoDB instance in CI
+* production build and deploy
+* lambda function keep warm
 
 ## Nice to have
 * experimenting with hapi, koa and other web server frameworks together with serverless-http
