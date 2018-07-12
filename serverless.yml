@@ -25,7 +25,7 @@ provider:
   stage: dev
   region: eu-west-1
   iamRoleStatements:
-    - Effect: "Allow"
+    - Effect: Allow
       Action:
         - dynamodb:DescribeTable
         - dynamodb:Query

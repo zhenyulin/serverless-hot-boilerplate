@@ -5,6 +5,7 @@ node_js:
 cache:
   yarn: true
   directories:
+    - ~/.npm
     - node_modules
 script:
   - npm install -g serverless
