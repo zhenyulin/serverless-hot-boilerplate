@@ -1,12 +1,14 @@
 # serverless-hot-boilerplate
 
+[![Build Status](https://travis-ci.org/zhenyulin/serverless-hot-boilerplate.svg?branch=master)](https://travis-ci.org/zhenyulin/serverless-hot-boilerplate) [![Coverage Status](https://coveralls.io/repos/github/zhenyulin/serverless-hot-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/zhenyulin/serverless-hot-boilerplate?branch=master) [![Known Vulnerabilities](https://snyk.io/test/github/zhenyulin/serverless-hot-boilerplate/badge.svg)](https://snyk.io/test/github/zhenyulin/serverless-hot-boilerplate)
+
 ultimate-hot-boilerplate for serverless, build, test and deploy globally scalable APIs cheaper and faster
 
 ## Development Experience
 * Local Offline (serverless-offline, serverless-local-dynamodb)
 * Hot Module Reload (serverless-webpack)
 * auto fix and code format (eslint, prettier and webpack)
-* ..less path resolve (webpack, eslint, jest)
+* `..`less path resolve (webpack, eslint, jest)
 * packages with friendly apis (express, dynamoose)
 
 ## Development
