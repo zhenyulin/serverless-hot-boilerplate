@@ -1,6 +1,11 @@
 # serverless-hot-boilerplate
 
-[![Build Status](https://travis-ci.org/zhenyulin/serverless-hot-boilerplate.svg?branch=master)](https://travis-ci.org/zhenyulin/serverless-hot-boilerplate) [![Coverage Status](https://coveralls.io/repos/github/zhenyulin/serverless-hot-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/zhenyulin/serverless-hot-boilerplate?branch=master) [![Known Vulnerabilities](https://snyk.io/test/github/zhenyulin/serverless-hot-boilerplate/badge.svg)](https://snyk.io/test/github/zhenyulin/serverless-hot-boilerplate)
+[![Build Status](https://travis-ci.org/zhenyulin/serverless-hot-boilerplate.svg?branch=master)](https://travis-ci.org/zhenyulin/serverless-hot-boilerplate)
+[![Coverage Status](https://coveralls.io/repos/github/zhenyulin/serverless-hot-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/zhenyulin/serverless-hot-boilerplate?branch=master)
+[![Known Vulnerabilities](https://snyk.io/test/github/zhenyulin/serverless-hot-boilerplate/badge.svg)](https://snyk.io/test/github/zhenyulin/serverless-hot-boilerplate)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/zhenyulin/serverless-hot-boilerplate/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/zhenyulin/serverless-hot-boilerplate/?branch=master)
+[![Dependencies](https://david-dm.org/zhenyulin/serverless-hot-boilerplate.svg)](https://david-dm.org/zhenyulin/serverless-hot-boilerplate)
+[![devDependencies](https://david-dm.org/zhenyulin/serverless-hot-boilerplate/dev-status.svg)](https://david-dm.org/zhenyulin/serverless-hot-boilerplate?type=dev)
 
 ultimate-hot-boilerplate for serverless, build, test and deploy globally scalable APIs cheaper and faster
 
