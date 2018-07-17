@@ -2,11 +2,10 @@ install:
 	@yarn
 
 setup:
-	@sls dyanmodb remove \
-	@sls dynamodb install
+	@sls dynamodb remove && sls dynamodb install
 
 run:
-	@sls offline start
+	@sls offline start --dontPrintOutput
 
 lint:
 	@echo 'linting…'
@@ -31,7 +30,10 @@ test-coverage:
 	@npx jest --coverage --config jest.config.js
 
 deploy:
-	@sls deploy -v
+	@sls deploy --verbose --stage dev --region eu-west-1
+
+production-deploy:
+	@sls deploy --verbose --stage production --region eu-west-1
 
 destroy:
-	@sls remove
+	@sls remove --verbose

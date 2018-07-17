@@ -3,27 +3,11 @@ service: serverless-hot-boilerplate
 
 frameworkVersion: ">=1.1.0 <2.0.0"
 
-resources:
-  Resources:
-    todoExampleTable:
-      Type: 'AWS::DynamoDB::Table'
-      Properties:
-        AttributeDefinitions:
-          - AttributeName: id
-            AttributeType: S
-        KeySchema:
-          - AttributeName: id
-            KeyType: HASH
-        ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
-        TableName: serverless-hot-boilerplate
-
 provider:
   name: aws
   runtime: nodejs8.10
-  stage: dev
   region: eu-west-1
+  stage: dev
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -38,8 +22,22 @@ provider:
         Fn::GetAtt:
           - todoExampleTable
           - Arn
-  environment:
-    AWS_REGION: ${file(./serverless.env.yml):dev.AWS_REGION}
+
+resources:
+  Resources:
+    todoExampleTable:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:service}-todos-${self:provider.stage}
 
 functions:
   create:
@@ -86,3 +84,8 @@ plugins:
   - serverless-webpack
   - serverless-dynamodb-local
   - serverless-offline
+
+custom:
+  webpack:
+    packager: 'yarn'
+    includeModules: true
