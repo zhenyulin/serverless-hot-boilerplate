@@ -5730,6 +5730,10 @@ serverless-offline@^3.25.6:
     uuid "^3.2.1"
     velocityjs "^0.9.3"
 
+serverless-plugin-create-deployment-bucket@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/serverless-plugin-create-deployment-bucket/-/serverless-plugin-create-deployment-bucket-0.0.2.tgz#91610bb8071df1f7334d0379e25c67e917d47f46"
+
 serverless-webpack@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/serverless-webpack/-/serverless-webpack-5.2.0.tgz#3ad2de29506ad79a25d0ac8dc3f0a647b4944175"

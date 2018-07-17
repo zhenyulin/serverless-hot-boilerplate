@@ -82,6 +82,7 @@ functions:
           cors: true
 
 plugins:
+  - serverless-plugin-create-deployment-bucket
   - serverless-webpack
   - serverless-dynamodb-local
   - serverless-offline
