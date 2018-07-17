@@ -1,16 +1,16 @@
 ---
 language: node_js
 node_js:
-  - node
+  - 8.10
 cache:
   yarn: true
   directories:
     - ~/.npm
     - node_modules
 script:
-  - npm install -g serverless
+  - npm install -g serverless npx
   - make install
-  - make test
+  - make test-coverage | npx coveralls
   - make deploy
 branches:
   only:
