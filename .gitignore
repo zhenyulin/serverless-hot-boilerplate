@@ -6,14 +6,15 @@ coverage/
 reports/
 
 # dist
-lib/
 dist/
 
-# dot files
-.DS_Store
+# build cache
 .cache
 .serverless
 .webpack
+
+# dot files
+.DS_Store
 *.env*
 package-lock.json
 
