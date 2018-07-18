@@ -32,8 +32,11 @@ test-coverage:
 deploy:
 	@sls deploy --verbose --stage dev --region eu-west-1
 
-production-deploy:
+deploy-production:
 	@sls deploy --verbose --stage production --region eu-west-1
 
 destroy:
-	@sls remove --verbose
+	@sls remove --verbose --stage dev --region eu-west-1
+
+destroy-production:
+	@sls remove --verbose --stage production --region eu-west-1

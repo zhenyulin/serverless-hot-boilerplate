@@ -1,5 +1,10 @@
 import dynamoose from 'dynamoose';
 
+if (process.env.IS_OFFLINE) {
+	process.env.AWS_REGION = 'localhost';
+	dynamoose.local();
+}
+
 const TodoSchema = new dynamoose.Schema(
 	{
 		id: String,
@@ -11,4 +16,4 @@ const TodoSchema = new dynamoose.Schema(
 	},
 );
 
-export default dynamoose.model('serverless-hot-boilerplate', TodoSchema);
+export default dynamoose.model(process.env.DYNAMODB_TABLE, TodoSchema);
