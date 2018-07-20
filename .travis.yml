@@ -12,7 +12,9 @@ script:
   - make install
   - make test-coverage
   - cat coverage/lcov.info | npx coveralls
-  - sls dynamodb start && make integration-test
+  - sls dynamodb start --detached
+  - make integration-test
+  - sls dynamodb stop
   - make deploy
 branches:
   only:
