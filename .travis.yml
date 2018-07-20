@@ -3,18 +3,17 @@ language: node_js
 cache:
   yarn: true
   directories:
-    - ~/.npm
-    - ~/travis/.nvm
     - node_modules
-script:
+    - $(npm config get prefix)/bin
+install:
   - npm install -g serverless npx
   - sls dynamodb install
   - make install
+script:
   - make test-coverage
   - cat coverage/lcov.info | npx coveralls
-  - sls dynamodb start --detached
+  - sls dynamodb start & sleep 5
   - make integration-test
-  - sls dynamodb stop
   - make deploy
 branches:
   only:
