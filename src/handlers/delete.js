@@ -4,15 +4,10 @@ import express from 'express';
 import Todo from 'models/todo';
 
 export const handler = async (req, res) => {
-	try {
-		await Todo.delete({
-			id: req.params.id,
-		});
-		res.status(204).end();
-	} catch (e) {
-		res.json(e);
-		throw e;
-	}
+	await Todo.delete({
+		id: req.params.id,
+	});
+	res.status(204).end();
 };
 
 export const app = express().use('/todos/:id', handler);

@@ -4,15 +4,10 @@ import express from 'express';
 import Todo from 'models/todo';
 
 export const handler = async (req, res) => {
-	try {
-		const result = await Todo.get({
-			id: req.params.id,
-		});
-		res.json(result);
-	} catch (e) {
-		res.json(e);
-		throw e;
-	}
+	const result = await Todo.get({
+		id: req.params.id,
+	});
+	res.json(result);
 };
 
 export const app = express().use('/todos/:id', handler);

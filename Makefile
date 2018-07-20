@@ -16,18 +16,19 @@ lint-fix:
 	@npx eslint src --fix
 
 lint-watch:
-	@set +e
 	@npx nodemon --watch src -q --exec 'make lint-fix'
 
 test:
 	@npx jest --config jest.config.js
 
 test-watch:
-	@set +e
 	@npx jest --watch --config jest.config.js
 
 test-coverage:
 	@npx jest --coverage --config jest.config.js
+
+integration-test:
+	@INTEGRATION_TEST=true npx jest --config jest.config.js
 
 deploy:
 	@sls deploy --verbose --stage dev --region eu-west-1
