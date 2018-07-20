@@ -37,10 +37,10 @@ deploy:
 	@sls deploy --verbose --stage dev --region eu-west-1
 
 deploy-production:
-	@sls deploy --verbose --stage production --region eu-west-1
+	@sls deploy --verbose --stage prod --region eu-west-1
 
 destroy:
 	@sls remove --verbose --stage dev --region eu-west-1
 
 destroy-production:
-	@sls remove --verbose --stage production --region eu-west-1
+	@sls remove --verbose --stage prod --region eu-west-1

@@ -8,7 +8,7 @@ cache:
     - $(npm config get prefix)/lib/node_modules
     - ~/travis/.bashrc
 install:
-  - npm install -g serverless npx
+  - yarn add -g serverless npx
   - sls dynamodb install
   - make install
 script:
@@ -17,6 +17,7 @@ script:
   - sls dynamodb start & sleep 5
   - make integration-test
   - make deploy
+  - make deploy-production
 branches:
   only:
     - master
