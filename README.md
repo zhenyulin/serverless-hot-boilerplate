@@ -28,7 +28,3 @@ make run # start serverless-offline
 * lambda function keep warm in PROD
 * health-check
 * sentry, log, zipkin tracing, metrics
-
-## Nice to have
-* hapi, koa, express comparison with serverless-http
-* graphql endpoint
