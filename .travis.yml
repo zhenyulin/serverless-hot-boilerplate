@@ -1,20 +1,23 @@
 ---
 language: node_js
 cache:
-  yarn: true
   directories:
     - node_modules
     - $(npm config get prefix)/bin
     - $(npm config get prefix)/lib/node_modules
 install:
+  # serverless plugin packages are required for `sls` command
+  - make install
+  # global packages to run sls and npx command in Makefile
   - npm i -g serverless npx
   - sls dynamodb install
-  - make install
+before_script:
+  - sls dynamodb start & sleep 5
 script:
   - make test-coverage
-  - cat coverage/lcov.info | coveralls
-  - sls dynamodb start & sleep 5
   - make integration-test
+after_script:
+  - cat coverage/lcov.info | coveralls
   - make deploy
   - make deploy-production
 branches:
