@@ -1,6 +1,9 @@
 install:
 	@yarn
 
+cleanup:
+	@rm -rf .serverless .webpack coverage node_modules *.log
+
 setup:
 	@sls dynamodb remove && sls dynamodb install
 
