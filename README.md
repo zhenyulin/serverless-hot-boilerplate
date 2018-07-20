@@ -10,11 +10,11 @@
 ultimate-hot-boilerplate for serverless, build, test and deploy globally scalable APIs cheaper and faster
 
 ## Development Experience
-* Local Offline (serverless-offline, serverless-local-dynamodb)
-* Hot Module Reload (serverless-webpack)
-* auto fix and code format (eslint, prettier and webpack)
-* `..`less path resolve (webpack, eslint, jest)
-* packages with friendly apis (express, dynamoose)
+* Local Offline development (serverless-offline, serverless-local-dynamodb)
+* Hot Module Reload with code linting and formatting
+* absolute path resolve (`..`less) in development and test
+* integration test in CI with local dynamodb
+* DX boost with express, dynamoose
 
 ## Development
 
@@ -25,11 +25,10 @@ make run # start serverless-offline
 ```
 
 ## Todos
-* integration test with a test dynamoDB instance in CI
-* production build and deploy
-* lambda function keep warm
+* lambda function keep warm in PROD
+* health-check
+* sentry, log, zipkin tracing, metrics
 
 ## Nice to have
-* experimenting with hapi, koa and other web server frameworks together with serverless-http
-* mock tooling packages for express, dynamoose
+* hapi, koa, express comparison with serverless-http
 * graphql endpoint
