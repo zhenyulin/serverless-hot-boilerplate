@@ -14,7 +14,7 @@ ultimate-hot-boilerplate for serverless, build, test and deploy globally scalabl
 * Hot Module Reload with code linting and formatting
 * absolute path resolve (`..`less) in development and test
 * integration test in CI with local dynamodb
-* DX boost with express, dynamoose
+* use express, dynamoose instead of naked Lambda, Dynamodb API
 
 ## Development
 
