@@ -5,6 +5,8 @@ cache:
   directories:
     - node_modules
     - $(npm config get prefix)/bin
+    - $(npm config get prefix)/lib/node_modules
+    - ~/travis/.bashrc
 install:
   - npm install -g serverless npx
   - sls dynamodb install
