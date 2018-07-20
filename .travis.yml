@@ -8,11 +8,11 @@ cache:
     - node_modules
 script:
   - npm install -g serverless npx
-  - make setup
+  - sls dynamodb install
   - make install
   - make test-coverage
   - cat coverage/lcov.info | npx coveralls
-  - sls dyanmodb start && make integration-test
+  - sls dynamodb start && make integration-test
   - make deploy
 branches:
   only:
