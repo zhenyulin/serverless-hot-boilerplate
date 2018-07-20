@@ -1,15 +1,4 @@
-import dynamoose from 'dynamoose';
-
-if (process.env.IS_OFFLINE) {
-	process.env.AWS_REGION = 'localhost';
-	dynamoose.local();
-}
-
-if (process.env.INTEGRATION_TEST) {
-	process.env.AWS_REGION = 'localhost';
-	process.env.DYNAMODB_TABLE = `test-table-${process.env.JEST_WORKER_ID}`;
-	dynamoose.local();
-}
+import dynamoose from 'libs/dynamoose';
 
 const TodoSchema = new dynamoose.Schema(
 	{
