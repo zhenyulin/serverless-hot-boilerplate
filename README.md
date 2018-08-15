@@ -28,3 +28,6 @@ make run # start serverless-offline
 * lambda function keep warm in PROD
 * health-check
 * sentry, log, zipkin tracing, metrics
+
+## Related
+[serverless-graphql-neo4j](https://github.com/zhenyulin/serverless-graphql-neo4j)
