@@ -32,3 +32,4 @@ make run # start serverless-offline
 
 ## Related
 [serverless-graphql-neo4j](https://github.com/zhenyulin/serverless-graphql-neo4j)
+[serverless-graphql-mongo](https://github.com/zhenyulin/serverless-graphql-mongo)
