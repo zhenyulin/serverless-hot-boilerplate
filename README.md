@@ -10,10 +10,11 @@
 ultimate-hot-boilerplate for serverless, build, test and deploy globally scalable APIs cheaper and faster
 
 ## Development Experience
-* Local Offline development (serverless-offline, serverless-local-dynamodb)
+* One command to start local development `make run` (serverless-offline, serverless-local-dynamodb)
 * Hot Module Reload with code linting and formatting
+* Tests linted automatically with [jest-runner-eslint](https://github.com/jest-community/jest-runner-eslint)
 * absolute path resolve (`..`less) in development and test
-* integration test in CI with local dynamodb
+* test in CI with local dynamodb setup
 * use express, dynamoose instead of naked Lambda, Dynamodb API
 
 ## Development
