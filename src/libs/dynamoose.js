@@ -7,7 +7,7 @@ if (process.env.IS_OFFLINE) {
 }
 
 /* istanbul ignore next */
-if (process.env.INTEGRATION_TEST) {
+if (process.env.NODE_ENV === 'test') {
 	process.env.AWS_REGION = 'localhost';
 	process.env.DYNAMODB_TABLE = `test-table-${process.env.JEST_WORKER_ID}`;
 	dynamoose.local();

@@ -1,23 +1,22 @@
 import request from 'supertest';
+import uuid from 'uuid';
 
 import Todo from 'models/todo';
 import { app } from 'handlers/create';
 
-jest.mock('models/todo');
-jest.mock('uuid', () => ({
-	v1: jest.fn(() => 'mock-id'),
-}));
+uuid.v1 = () => 'mock-id';
 
 describe('create.app', () => {
-	beforeEach(() => {
-		jest.clearAllMocks();
-	});
-
 	test('create an item in Dynamo', async () => {
+		const mockText = 'add one item';
 		const response = await request(app)
 			.post('/')
-			.send({ text: 'add one item' });
+			.send({ text: mockText });
 		expect(response.status).toBe(200);
-		expect(Todo.create.mock.calls).toMatchSnapshot();
+		expect(response.body.text).toEqual(mockText);
+
+		await Todo.delete({
+			id: 'mock-id',
+		});
 	});
 });
