@@ -37,6 +37,14 @@ resources:
         TableName: ${self:provider.environment.DYNAMODB_TABLE}
 
 functions:
+  alive:
+    handler: src/handlers/__alive.default
+    events:
+      - http:
+          path: __alive
+          method: get
+          cors: true
+
   create:
     handler: src/handlers/create.default
     events:
