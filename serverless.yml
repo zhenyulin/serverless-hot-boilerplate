@@ -20,6 +20,7 @@ provider:
           - Arn
   environment:
     DYNAMODB_TABLE: ${self:service}-${self:provider.stage}
+    BASE_DOMAIN: ${env:BASE_DOMAIN}
 
 resources:
   Resources:
