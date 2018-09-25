@@ -1,7 +1,7 @@
 ---
 service: serverless-hot-boilerplate
 
-frameworkVersion: ">=1.1.0 <2.0.0"
+frameworkVersion: ">=1.25.0 <2.0.0"
 
 provider:
   name: aws
@@ -9,6 +9,7 @@ provider:
   deploymentBucket: ${self:service}-artefacts-${self:provider.region}
   region: ${opt:region, self:custom.defaultRegion}
   stage: ${opt:stage, 'dev'}
+  endpointType: regional
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -35,6 +36,8 @@ resources:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
         TableName: ${self:provider.environment.DYNAMODB_TABLE}
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
 
 functions:
   alive:
@@ -86,13 +89,20 @@ functions:
           cors: true
 
 plugins:
+  - serverless-dotenv-plugin
   - serverless-plugin-create-deployment-bucket
-  - serverless-webpack
+  - serverless-domain-manager
   - serverless-dynamodb-local
+  - serverless-webpack
   - serverless-offline
 
 custom:
+  defaultRegion: 'eu-west-1'
   webpack:
     packager: 'yarn'
     includeModules: true
-  defaultRegion: 'eu-west-1'
+  customDomain:
+    domainName: api.${env:BASE_DOMAIN}
+    endpointType: 'regional'
+    certificateRegion: ${self:provider.region}
+    createRoute53Record: false
