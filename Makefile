@@ -50,3 +50,6 @@ destroy-production-eu:
 
 destroy-production-us:
 	@sls remove --verbose --stage prod --region $(REGION_US)
+
+update-infra-resources:
+	@cd terraform && terraform apply -var-file=".env.tfvars"

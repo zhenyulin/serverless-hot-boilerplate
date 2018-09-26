@@ -12,10 +12,10 @@ dist/
 .cache
 .serverless
 .webpack
-*.tfstate
-*.tfstate.*.backup
-*.tfstate.backup
 .terraform/
+*.tfstate
+*.tfstate.backup
+*.tfstate.*.backup
 
 # dot files
 .DS_Store
