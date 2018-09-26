@@ -18,11 +18,11 @@ run:
 
 lint:
 	@echo 'linting…'
-	@eslint src
+	@eslint_d src
 
 lint-fix:
 	@echo 'lint-fixing…'
-	@eslint src --fix
+	@eslint_d src --fix
 
 test:
 	@jest
@@ -34,19 +34,19 @@ test-coverage:
 	@jest --coverage
 
 deploy:
-	@sls deploy --verbose --stage dev --region eu-west-1
+	@sls deploy --verbose --stage dev --region $(REGION_EU)
 
 deploy-production-eu:
-	@sls deploy --verbose --stage prod --region eu-west-1
+	@sls deploy --verbose --stage prod --region $(REGION_EU)
 
 deploy-production-us:
-	@sls deploy --verbose --stage prod --region us-west-2
+	@sls deploy --verbose --stage prod --region $(REGION_US)
 
 destroy:
-	@sls remove --verbose --stage dev --region eu-west-1
+	@sls remove --verbose --stage dev --region $(REGION_EU)
 
 destroy-production-eu:
-	@sls remove --verbose --stage prod --region eu-west-1
+	@sls remove --verbose --stage prod --region $(REGION_EU)
 
 destroy-production-us:
-	@sls remove --verbose --stage prod --region us-west-2
+	@sls remove --verbose --stage prod --region $(REGION_US)
