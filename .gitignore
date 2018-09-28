@@ -10,6 +10,7 @@ dist/
 
 # build cache
 .cache
+.dynamodb
 .serverless
 .webpack
 .terraform/

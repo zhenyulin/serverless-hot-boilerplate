@@ -13,7 +13,6 @@ script:
   - make test-coverage
 after_script:
   - cat coverage/lcov.info | coveralls
-  - make deploy
   - make deploy-production-eu
   - make deploy-production-us
 branches:

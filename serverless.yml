@@ -49,6 +49,14 @@ functions:
           method: get
           cors: true
 
+  health:
+    handler: src/handlers/__health.default
+    events:
+      - http:
+          path: __health
+          method: get
+          cors: true
+
   create:
     handler: src/handlers/create.default
     events:
