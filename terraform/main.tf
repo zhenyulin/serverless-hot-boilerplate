@@ -10,7 +10,7 @@ resource "aws_route53_zone" "primary" {
 
 resource "aws_route53_health_check" "api_eu" {
   fqdn              = "${var.eu_lambda_url}"
-  resource_path     = "/prod/__alive"
+  resource_path     = "/prod/__health"
   port              = 443
   type              = "HTTPS"
   failure_threshold = "5"
@@ -23,7 +23,7 @@ resource "aws_route53_health_check" "api_eu" {
 
 resource "aws_route53_health_check" "api_us" {
   fqdn              = "${var.us_lambda_url}"
-  resource_path     = "/prod/__alive"
+  resource_path     = "/prod/__health"
   port              = 443
   type              = "HTTPS"
   failure_threshold = "5"
