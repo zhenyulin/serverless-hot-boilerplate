@@ -4,6 +4,7 @@ cache:
   yarn: true
   directories:
     - node_modules
+    - .dynamodb
 install:
   - make install
   - sls dynamodb install
