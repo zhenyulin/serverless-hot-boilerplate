@@ -47,7 +47,7 @@ resource "aws_route53_record" "api_eu" {
   health_check_id = "${aws_route53_health_check.api_eu.id}"
 
   set_identifier = "eu"
-  records = ["${var.eu_api_gateway_target_domain_name}"]
+  records        = ["${var.eu_api_gateway_target_domain_name}"]
 }
 
 resource "aws_route53_record" "api_us" {
@@ -63,11 +63,10 @@ resource "aws_route53_record" "api_us" {
   health_check_id = "${aws_route53_health_check.api_us.id}"
 
   set_identifier = "us"
-  records = ["${var.us_api_gateway_target_domain_name}"]
+  records        = ["${var.us_api_gateway_target_domain_name}"]
 }
 
 resource "aws_dynamodb_global_table" "myTable" {
-
   name = "${var.dynamodb_table_name}"
 
   replica {
