@@ -13,9 +13,9 @@ ultimate-hot-boilerplate for serverless, build, test and deploy globally scalabl
 * One command to start local development `make run`
 * Hot Module Reload with code linting and formatting
 * absolute path resolve (`..`less) in development and test
-* test in CI with local dynamodb setup
-* use express, dynamoose instead of naked Lambda, Dynamodb API
-* multi-region active-active deployment with terraform
+* use express, dynamoose to improve development, and test experience
+* no-staging deployment, using flags to control rollout and test
+* multi-region deployment latency based routing and active-active failover, configured with terraform
 
 ## Development
 
