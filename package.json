@@ -37,7 +37,7 @@
     "serverless-plugin-create-deployment-bucket": "^0.0.2",
     "serverless-webpack": "^5.2.0",
     "supertest": "^3.3.0",
-    "webpack": "^4.20.2",
+    "webpack": "4.46.0",
     "webpack-node-externals": "^1.7.2"
   }
 }
