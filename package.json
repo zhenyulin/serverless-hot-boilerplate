@@ -6,7 +6,7 @@
     "dynamoose": "^0.8.7",
     "express": "^4.16.3",
     "serverless-http": "^1.6.0",
-    "uuid": "^3.3.2"
+    "uuid": "3.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.0",
