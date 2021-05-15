@@ -1,5 +1,5 @@
 provider "aws" {
-  version = "~> 1.37"
+  version = "~> 3.0"
 }
 
 # add your domain name to set up hosted zone in Route 53
