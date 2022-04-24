@@ -2,7 +2,7 @@
   "name": "serverless-hot-boilerplate",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "body-parser": "1.20.0",
     "dynamoose": "^0.8.7",
     "express": "^4.16.3",
     "serverless-http": "^1.6.0",
