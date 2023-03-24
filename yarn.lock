@@ -6368,8 +6368,7 @@ serverless-dotenv-plugin@^2.0.1:
     dotenv-expand "^4.0.1"
 
 serverless-dynamodb-local@^0.2.35:
-  version "0.2.35"
-  resolved "https://registry.yarnpkg.com/serverless-dynamodb-local/-/serverless-dynamodb-local-0.2.35.tgz#abc8000a8b39ce06fd5a8bdf560278ef93fc68d4"
+  version "0.2.40"
   dependencies:
     aws-sdk "^2.7.0"
     bluebird "^3.4.6"
