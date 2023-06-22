@@ -6353,8 +6353,7 @@ serve-static@1.13.2:
     send "0.16.2"
 
 serverless-domain-manager@^2.6.5:
-  version "2.6.5"
-  resolved "https://registry.yarnpkg.com/serverless-domain-manager/-/serverless-domain-manager-2.6.5.tgz#901513e2e388a557d60098f528beaba07d484e01"
+  version "2.6.13"
   dependencies:
     aws-sdk "^2.177.0"
     chalk "^2.0.1"
